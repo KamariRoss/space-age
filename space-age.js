@@ -26,28 +26,28 @@ export const age = (planets, seconds) => {
       planetAge = oneEarthYear
       break
     case "mercury":
-      planetAge = (oneEarthYear / 0.2408467).toFixed(2)
+      planetAge = oneEarthYear / 0.2408467
       break
     case "venus":
-      planetAge = (oneEarthYear / 0.61519726).toFixed(2)
+      planetAge = oneEarthYear / 0.61519726
       break
     case "mars":
-      planetAge = (oneEarthYear / 1.8808158).toFixed(2)
+      planetAge = oneEarthYear / 1.8808158
       break
     case "jupiter":
-      planetAge = (oneEarthYear / 11.862615).toFixed(2)
+      planetAge = oneEarthYear / 11.862615
       break
     case "saturn":
-      planetAge = (oneEarthYear / 29.447498).toFixed(2)
+      planetAge = oneEarthYear / 29.447498
       break
     case "uranus":
-      planetAge = (oneEarthYear / 84.016846).toFixed(2)
+      planetAge = oneEarthYear / 84.016846
       break
     case "neptune":
-      planetAge = (oneEarthYear / 164.79132).toFixed(2)
+      planetAge = oneEarthYear / 164.79132
       break
   }
-  return planetAge
+  return parseFloat(planetAge.toFixed(2))
 }
 
 // const seconds = process.argv[3]

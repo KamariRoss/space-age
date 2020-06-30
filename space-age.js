@@ -18,11 +18,11 @@
 // This equation takes the earth years times it to the number to translate the age
 // Return the age
 
-export const age = (planets, seconds) => {
-  let planetAge = 0
+export const age = (planet, seconds) => {
+  const oneEarthYear = seconds / 31557600
   const planetaryEarthYearConversion = {
     mercury: 0.2408467,
-    earth: seconds / 31557600,
+    earth: 1,
     venus: 0.61519726,
     mars: 1.8808158,
     jupiter: 11.862615,
@@ -30,43 +30,10 @@ export const age = (planets, seconds) => {
     uranus: 84.016846,
     neptune: 164.79132,
   }
-  switch (planets) {
-    case "earth":
-      planetAge = planetaryEarthYearConversion.earth
-      break
-    case "mercury":
-      planetAge =
-        planetaryEarthYearConversion.earth /
-        planetaryEarthYearConversion.mercury
-      break
-    case "venus":
-      planetAge =
-        planetaryEarthYearConversion.earth / planetaryEarthYearConversion.venus
-      break
-    case "mars":
-      planetAge =
-        planetaryEarthYearConversion.earth / planetaryEarthYearConversion.mars
-      break
-    case "jupiter":
-      planetAge =
-        planetaryEarthYearConversion.earth /
-        planetaryEarthYearConversion.jupiter
-      break
-    case "saturn":
-      planetAge =
-        planetaryEarthYearConversion.earth / planetaryEarthYearConversion.saturn
-      break
-    case "uranus":
-      planetAge =
-        planetaryEarthYearConversion.earth / planetaryEarthYearConversion.uranus
-      break
-    case "neptune":
-      planetAge =
-        planetaryEarthYearConversion.earth /
-        planetaryEarthYearConversion.neptune
-      break
-  }
-  return Number(planetAge.toFixed(2))
+
+  return Number(
+    (oneEarthYear / planetaryEarthYearConversion[planet]).toFixed(2)
+  )
 }
 
 // const seconds = process.argv[3]
